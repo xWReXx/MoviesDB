@@ -7,18 +7,18 @@ module.exports = {
     getById(id){
             return database('Movies').where({id: id}).first()
     },
-    deleteStudent(id){
+    deleteMovie(id){
         return database('Movies')
         .where({id: id})
         .delete()
     },
-    updateStudent(id, movie){
+    updateMovie(id, movie){
         return database('Movies')
         .where({id: id})
         .update(movie)
         .returning('*')
     },
-    createStudent(newMovie){
+    createMovie(newMovie){
         return database('Movies')
         .insert(newMovie)
     }

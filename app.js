@@ -19,17 +19,17 @@ app.get('/:id', (req, res) => {
 })
 
 app.post('/', (req, res) => {
-    queries.createStudent(req.body)
+    queries.createMovie(req.body)
     .then(response.status(201))
 })
 
 app.delete('/:id', (req,res) =>{
-    queries.deleteStudent(req.params.id)
+    queries.deleteMovie(req.params.id)
     .then(res.send({ message: "Movie has been deleted"}))
 })
 
 app.put('/:id', (req,res) => {
-    queries.updateStudent(req.params.id, req.body)
+    queries.updateMovie(req.params.id, req.body)
     .then(movies => res.json(movies))
 })
 
