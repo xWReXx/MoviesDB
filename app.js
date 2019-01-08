@@ -20,10 +20,10 @@ app.get('/:id', (req, res) => {
 
 app.post('/', (req, res) => {
     queries.createMovie(req.body)
-    .then(res.status(201).send(res[0]))
+    .then(res.status(201).send("Post Sucessful"))
 })
 
-app.delete('/delete/:id', (req,res) =>{
+app.delete('/:id', (req,res) =>{
     queries.deleteMovie(req.params.id)
     .then(res.send({ message: "Movie has been deleted"}))
 })
